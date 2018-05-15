@@ -59,7 +59,7 @@ public class Util {
         int count = 0;
         int indexX = city.indexX;
         int indexY = city.indexY;
-        while(count<50 && Database.size > i){
+        while(count<1200 && Database.size > i){
 
             City nb, yb;
             if(indexX-i >0){
@@ -122,6 +122,26 @@ public class Util {
         Database.tsp.add(city);
         TSP(findNearestNeighbour(city));
     }
+
+    public static String[] getValues(String input){
+        String [] values = new String[3];
+        String [] out = input.split(" ");
+        int j=0;
+
+        for (int i=0; i<out.length; i++){
+            /*if(j==3)
+                break;*/
+            if(!out[i].equals("")){
+                values[j] = out[i];
+                j++;
+            }
+        }
+
+
+        return values;
+    }
+
+
 
 
 }

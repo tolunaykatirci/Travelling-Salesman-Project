@@ -19,7 +19,9 @@ public class FileReader {
             String sCurrentLine;
 
             while ((sCurrentLine = br.readLine()) != null) {
-                String[] parts = sCurrentLine.split(" ");
+
+                //String[] parts = sCurrentLine.split(" ");
+                String[] parts = Util.getValues(sCurrentLine);
                 id = Integer.parseInt(parts[0]);
                 x = Double.parseDouble(parts[1]);
                 y = Double.parseDouble(parts[2]);
