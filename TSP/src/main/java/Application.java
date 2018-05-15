@@ -27,6 +27,7 @@ public class Application {
 
             System.out.println(c);
         }
+        System.out.println("furkans");
         System.out.println(Database.pathLength);
         System.out.println("input length: " + Database.cities.size() + " output length: " + Database.tsp.size());
 
