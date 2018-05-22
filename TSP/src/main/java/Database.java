@@ -12,5 +12,6 @@ public class Database {
     public static List<City> tsp = new ArrayList<City>();
 
     public static int size;
-    public static double pathLength =0;
+    public static int pathLength =0;
+    public static int cityCount;
 }

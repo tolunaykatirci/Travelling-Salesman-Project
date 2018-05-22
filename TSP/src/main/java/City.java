@@ -7,6 +7,7 @@ public class City {
     private double x;
     private double y;
     private boolean isVisited;
+    private City nearestNeighbour;
     public List<City> neighbours = new ArrayList<City>();
 
     public Integer indexX = null;
@@ -33,6 +34,25 @@ public class City {
                 ", y=" + y +
                 ", isVisited=" + isVisited +
                 '}';
+    }
+
+    public City getNearestNeighbour() {
+        nearestNeighbour = null;
+        double nearestCityPath = Double.MAX_VALUE;
+        for (City c: Database.cities) {
+            if(!(c.getId()==getId()) && !c.isVisited()){
+                double path = Util.getWeight(this,c);
+                if(path<nearestCityPath){
+                    nearestCityPath=path;
+                    nearestNeighbour = c;
+                }
+            }
+        }
+        return nearestNeighbour;
+    }
+
+    public void setNearestNeighbour(City nearestNeighbour) {
+        this.nearestNeighbour = nearestNeighbour;
     }
 
     public int getId() {
